@@ -8,14 +8,21 @@ namespace PadawansTask1
         {
             // put your code here
             //throw new NotImplementedException();
-            int population = 0, years = 0;
-            do
+            if (initialPopulation <= 0 || currentPopulation <= 0 || percent <= 0 || visitors < 0)
             {
-                population = initialPopulation + (int)(initialPopulation * percent / 100) + visitors;
-                initialPopulation = population;
-                years++;
-            } while (population <= currentPopulation);
-            return years;
+                throw new ArgumentOutOfRangeException();
+            }
+            else
+            {
+                int population = 0, years = 0;
+                do
+                {
+                    population = initialPopulation + (int)(initialPopulation * percent / 100) + visitors;
+                    initialPopulation = population;
+                    years++;
+                } while (population <= currentPopulation);
+                return years;
+            }
         }
     }
 }
