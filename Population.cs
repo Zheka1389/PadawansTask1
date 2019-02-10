@@ -10,7 +10,7 @@ namespace PadawansTask1
             //throw new NotImplementedException();
             if (initialPopulation <= 0 || currentPopulation <= 0 || percent <= 0 || visitors < 0)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentException();
             }
             else
             {
